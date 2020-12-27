@@ -8,11 +8,9 @@ public class UIManager : MonoBehaviour {
     public static            UIManager       Instance;
     [SerializeField]         GameObject      initialPanel;
     [SerializeField]         TextMeshProUGUI killAmount;
-    [HideInInspector] public GameObject      gameCanvas;
 
     void Awake() {
         if (Instance == null) {
-            gameCanvas = transform.GetChild(0).gameObject;
             Instance   = this;
             DontDestroyOnLoad(gameObject);
         } else if (Instance != this) {

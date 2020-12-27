@@ -28,9 +28,23 @@
             <e p="GameManager.cs" t="Include" />
             <e p="UIManager.cs" t="Include" />
           </e>
+          <e p="Monster" t="Include">
+            <e p="IMonsterAction.cs" t="Include" />
+            <e p="Monster.cs" t="Include" />
+            <e p="MonsterUI.cs" t="Include" />
+          </e>
           <e p="PlayerController.cs" t="Include" />
+          <e p="Spawner" t="Include">
+            <e p="IPooledObject.cs" t="Include" />
+            <e p="ObjectPooler.cs" t="Include" />
+            <e p="Spawner.cs" t="Include" />
+          </e>
           <e p="Strings.cs" t="Include" />
           <e p="Tags.cs" t="Include" />
+          <e p="Tower" t="Include">
+            <e p="Bullet.cs" t="Include" />
+            <e p="Tower.cs" t="Include" />
+          </e>
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">

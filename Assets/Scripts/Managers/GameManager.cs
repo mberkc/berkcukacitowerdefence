@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour {
 
     [SerializeField] GameState currentGameState;
 
+    Spawner _spawner;
+
     int kills;
 
     public bool isPlaying;
@@ -40,11 +42,12 @@ public class GameManager : MonoBehaviour {
     void Awake() {
         if (Instance == null) {
             Instance = this;
+            _spawner = GameObject.FindGameObjectWithTag(Tags.SPAWNER).GetComponent<Spawner>();
             DontDestroyOnLoad(gameObject);
         } else if (Instance != this) {
             Destroy(gameObject);
         }
-        Wave            = PlayerPrefs.GetInt(Strings.WAVE, wave);
+        Wave             = PlayerPrefs.GetInt(Strings.WAVE, wave);
         currentGameState = GameState.None;
     }
 
