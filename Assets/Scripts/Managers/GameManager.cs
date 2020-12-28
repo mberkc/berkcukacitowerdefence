@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections;
+using DG.Tweening;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
@@ -63,11 +64,10 @@ public class GameManager : MonoBehaviour {
 
     void SetScene() {
         _spawner.InitializeSpawner();
-        kills = 0;
         _uiManager.InitPanels();
         isPlaying      = false;
         isLoadingScene = false;
-        _uiManager.SetWaveText(wave);
+        _uiManager.SetDestroyAmount(kills = 0);
         Initialize();
     }
 
@@ -84,11 +84,17 @@ public class GameManager : MonoBehaviour {
         isPlaying = true;
     }
 
+    public void DestroyMonster() {
+        if (isPlaying)
+            _uiManager.SetDestroyAmount(++kills);
+    }
+
     // Event subscribe
     public void Finish(bool success) {
         if (GetGameState() != GameState.Ending) {
             SetGameState(GameState.Ending);
             isPlaying = false;
+            DOTween.KillAll();
         }
         if (success)
             Win();

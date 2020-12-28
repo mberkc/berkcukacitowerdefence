@@ -2,14 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb9e9aff-fb46-4f54-a98e-b600775aa5eb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BerkCukaciTowerDefence/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BerkCukaciTowerDefence/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BerkCukaciTowerDefence/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BerkCukaciTowerDefence/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Bullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Bullet.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Spawner/ObjectPooler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Spawner/ObjectPooler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Monster/Monster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Monster/Monster.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Spawner/ActiveTargets.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Spawner/ActiveTargets.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Spawner/Spawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Spawner/Spawner.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tower/Bullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tower/Bullet.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tower/Tower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tower/Tower.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tower/TowerGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tower/TowerGenerator.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,28 +36,28 @@
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/Constants.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Strings.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Spawner/MonsterPooler.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Spawner/IPooledObject.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Monster/ObjectPooler.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/EventManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Monster/IMonsterAction.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Monster/MonsterUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Monster/Monster.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tower/Towers.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tower/MonsterUI1.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tower/ITowerAction.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tower/TowerUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Tower/TowerGenerator.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tags.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Spawner/ObjectPooler.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Spawner/Spawner.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Spawner/ITowerAction1.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Spawner/IActiveTargetsAction.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Tower/Bullet.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Spawner/ActiveTargets.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Spawner/Spawner.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Strings.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Monster/Monster.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Tower/TowerGenerator.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Tower/Bullet.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tower/Tower.cs" />
     </changedPaths>
   </component>
@@ -103,7 +106,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1609092326127</updated>
-      <workItem from="1609092338011" duration="28321000" />
+      <workItem from="1609092338011" duration="29755000" />
+      <workItem from="1609126449289" duration="2507000" />
     </task>
     <servers />
   </component>
@@ -122,6 +126,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

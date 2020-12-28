@@ -15,6 +15,8 @@ public class TowerGenerator : MonoBehaviour {
     }
 
     void GenerateTower() {
+        if (!GameManager.Instance.isPlaying)
+            return;
         int damage = Random.Range(minDamage, maxDamage);
         if (allTowersGenerated) {
             towers[Random.Range(0, towerPositions)].GenerateTower(damage);
@@ -23,6 +25,12 @@ public class TowerGenerator : MonoBehaviour {
             towers[towerGenerationQueue[towerIndex]].GenerateTower(damage);
             if (towerIndex == towerPositions - 1)
                 allTowersGenerated = true;
+        }
+    }
+
+    public void DisableTowers() {
+        foreach (var tower in towers) {
+            tower.DisableTower();
         }
     }
 

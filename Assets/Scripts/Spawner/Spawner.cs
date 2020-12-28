@@ -9,7 +9,7 @@ public class Spawner : MonoBehaviour {
     ObjectPooler          _objectPooler;
     ActiveTargets         _activeTargets;
 
-    [SerializeField] float monsterSpawnCooldownMin     = 0.2f
+    [SerializeField] float monsterSpawnCooldownMin     = 0.5f
                          , monsterSpawnCooldownMax     = 2f
                          , monsterCooldownDecreaseRate = 0.1f;
 
@@ -73,5 +73,6 @@ public class Spawner : MonoBehaviour {
 
     public void RecycleObject(GameObject obj) {
         _objectPooler.DisableObject(obj);
+        _gameManager.DestroyMonster();
     }
 }

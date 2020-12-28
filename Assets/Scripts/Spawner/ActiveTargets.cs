@@ -15,11 +15,14 @@ public class ActiveTargets : MonoBehaviour, IActiveTargetsAction {
     public void AddTarget(Monster monster) {
         monsterQueue.Enqueue(monster);
         OnQueueUpdate?.Invoke(monsterQueue);
+        monster.OnDestroy += RemoveTarget;
+        monster.OnFinish  += RemoveTarget;
     }
 
-    public void RemoveTarget(Monster monster) {
-        if (monsterQueue.Contains(monster))
-            monsterQueue.Dequeue();
+    public void RemoveTarget() {
+        Monster monster = monsterQueue.Dequeue();
+        monster.OnDestroy -= RemoveTarget;
+        monster.OnFinish  -= RemoveTarget;
         OnQueueUpdate?.Invoke(monsterQueue);
     }
 }

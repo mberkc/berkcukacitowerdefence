@@ -36,7 +36,7 @@ public class UIManager : MonoBehaviour {
         // Subscribe - Event Call
     }
 
-    public void SetWaveText(int killAmount) {
-        this.killAmount.text = "KILLS " + killAmount;
+    public void SetDestroyAmount(int killAmount) {
+        this.killAmount.text = "KILLS: " + killAmount;
     }
 }

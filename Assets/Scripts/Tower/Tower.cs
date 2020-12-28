@@ -9,6 +9,7 @@ public class Tower : MonoBehaviour, ITowerAction {
     Queue<Monster>                              monsterQueue = new Queue<Monster>();
 
     [SerializeField] GameObject bulletPrefab;
+    Transform                   bullets;
 
     public int Damage {
         get {
@@ -27,6 +28,7 @@ public class Tower : MonoBehaviour, ITowerAction {
     void Start() {
         _activeTargets               =  Spawner.Instance.GetComponent<ActiveTargets>();
         _activeTargets.OnQueueUpdate += UpdateTargetList;
+        bullets                      =  transform.GetChild(1);
     }
 
     public void GenerateTower(int damage) {
@@ -37,13 +39,13 @@ public class Tower : MonoBehaviour, ITowerAction {
         OnDamageChange?.Invoke(damage);
     }
 
-    void DisableTower() {
+    public void DisableTower() {
         isActive = false;
         OnDamageChange?.Invoke(0);
     }
 
     void FixedUpdate() {
-        if (!isActive)
+        if (!GameManager.Instance.isPlaying || !isActive)
             return;
         if (canFire)
             LookForTarget();
@@ -68,8 +70,8 @@ public class Tower : MonoBehaviour, ITowerAction {
 
     void Fire() {
         canFire = false;
-        Bullet bullet = Instantiate(bulletPrefab).GetComponent<Bullet>();
-        bullet.OnBulletFired(monsterQueue.Peek());
+        Bullet bullet = Instantiate(bulletPrefab, bullets, false).GetComponent<Bullet>();
+        bullet.OnBulletFired(monsterQueue.Peek(), damage);
         //_objectPooler.SpawnFromPool(Strings.MONSTER);
     }
 

@@ -63,7 +63,7 @@ public class Monster : MonoBehaviour, IPooledObject, IMonsterAction {
         isAlive = false;
         StopMovement();
         OnFinish?.Invoke();
-        Invoke(nameof(Disable), 0.1f);
+        //Invoke(nameof(Disable), 0.1f);
     }
 
     void Disable() {
@@ -71,9 +71,13 @@ public class Monster : MonoBehaviour, IPooledObject, IMonsterAction {
     }
 
     void OnTriggerEnter2D(Collider2D other) {
-        if (other.CompareTag(Tags.BULLET))
+        if (other.CompareTag(Tags.BULLET)) {
             TakeDamage(other.GetComponent<Bullet>().Damage);
-        if (other.CompareTag(Tags.FINISH))
+            Destroy(other.gameObject);
+        }
+        if (other.CompareTag(Tags.FINISH)) {
             Finish();
+            GameManager.Instance.Finish(false);
+        }
     }
 }
