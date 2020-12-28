@@ -27,7 +27,7 @@ public class ObjectPooler : MonoBehaviour {
         }
     }
 
-    public GameObject SpawnFromPool(string tag) {
+    public Monster SpawnFromPool(string tag) {
         if (!poolDictionary.ContainsKey(tag))
             return null;
         GameObject obj = poolDictionary[tag].Dequeue();
@@ -38,7 +38,7 @@ public class ObjectPooler : MonoBehaviour {
         if (pooledObj != null)
             pooledObj.OnObjectSpawn();
         poolDictionary[tag].Enqueue(obj);
-        return obj;
+        return obj.GetComponent<Monster>();
     }
 
     public void DisableObject(GameObject obj) {

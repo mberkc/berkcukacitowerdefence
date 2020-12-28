@@ -17,13 +17,14 @@ public class GameManager : MonoBehaviour {
 
     [SerializeField] GameState currentGameState;
 
-    Spawner _spawner;
+    Spawner   _spawner;
+    UIManager _uiManager;
 
     int kills;
 
     public bool isPlaying;
 
-    bool isLoadingScene, isSuccess;
+    bool isLoadingScene;
 
 #endregion
 
@@ -41,8 +42,9 @@ public class GameManager : MonoBehaviour {
 
     void Awake() {
         if (Instance == null) {
-            Instance = this;
-            _spawner = Spawner.Instance;
+            Instance   = this;
+            _spawner   = Spawner.Instance;
+            _uiManager = UIManager.Instance;
             DontDestroyOnLoad(gameObject);
         } else if (Instance != this) {
             Destroy(gameObject);
@@ -61,10 +63,11 @@ public class GameManager : MonoBehaviour {
 
     void SetScene() {
         _spawner.InitializeSpawner();
-        UIManager.Instance.InitPanels();
+        kills = 0;
+        _uiManager.InitPanels();
         isPlaying      = false;
         isLoadingScene = false;
-        UIManager.Instance.SetWaveText(wave);
+        _uiManager.SetWaveText(wave);
         Initialize();
     }
 
@@ -83,24 +86,20 @@ public class GameManager : MonoBehaviour {
 
     // Event subscribe
     public void Finish(bool success) {
-        if (true)
+        if (GetGameState() != GameState.Ending) {
+            SetGameState(GameState.Ending);
+            isPlaying = false;
+        }
+        if (success)
             Win();
         else
             Lose();
     }
 
     void Win() {
-        if (GetGameState() != GameState.Ending) {
-            SetGameState(GameState.Ending);
-            isPlaying = false;
-        }
     }
 
     void Lose() {
-        if (GetGameState() != GameState.Ending) {
-            SetGameState(GameState.Ending);
-            isPlaying = false;
-        }
     }
 
 #endregion

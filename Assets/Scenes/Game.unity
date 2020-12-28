@@ -498,6 +498,7 @@ GameObject:
   - component: {fileID: 223674940}
   - component: {fileID: 223674942}
   - component: {fileID: 223674941}
+  - component: {fileID: 223674943}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Spawner
@@ -550,6 +551,18 @@ MonoBehaviour:
   monsterSpawnCooldownMin: 0.2
   monsterSpawnCooldownMax: 2
   monsterCooldownDecreaseRate: 0.1
+--- !u!114 &223674943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223674939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b65059a6f2ec0804eafb74a4ac27f5b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &229570474
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,6 +673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7ec4b0f59644ce41ae50926def9c5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 8263810537965924774, guid: 3f4c2e5c669adc840b37ddf8425e9c0b, type: 3}
   damage: 0
   isActive: 0
 --- !u!1 &263749485
@@ -1214,6 +1228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7ec4b0f59644ce41ae50926def9c5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 8263810537965924774, guid: 3f4c2e5c669adc840b37ddf8425e9c0b, type: 3}
   damage: 0
   isActive: 0
 --- !u!1 &340482605
@@ -1905,6 +1920,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7ec4b0f59644ce41ae50926def9c5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 8263810537965924774, guid: 3f4c2e5c669adc840b37ddf8425e9c0b, type: 3}
   damage: 0
   isActive: 0
 --- !u!1 &612198215
@@ -2017,6 +2033,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7ec4b0f59644ce41ae50926def9c5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 8263810537965924774, guid: 3f4c2e5c669adc840b37ddf8425e9c0b, type: 3}
   damage: 0
   isActive: 0
 --- !u!1 &787886284
@@ -2229,6 +2246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7ec4b0f59644ce41ae50926def9c5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 8263810537965924774, guid: 3f4c2e5c669adc840b37ddf8425e9c0b, type: 3}
   damage: 0
   isActive: 0
 --- !u!1 &879426336
@@ -2341,6 +2359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7ec4b0f59644ce41ae50926def9c5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 8263810537965924774, guid: 3f4c2e5c669adc840b37ddf8425e9c0b, type: 3}
   damage: 0
   isActive: 0
 --- !u!1 &889552469
@@ -2818,6 +2837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7ec4b0f59644ce41ae50926def9c5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 8263810537965924774, guid: 3f4c2e5c669adc840b37ddf8425e9c0b, type: 3}
   damage: 0
   isActive: 0
 --- !u!1 &1159011938
@@ -3030,6 +3050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7ec4b0f59644ce41ae50926def9c5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 8263810537965924774, guid: 3f4c2e5c669adc840b37ddf8425e9c0b, type: 3}
   damage: 0
   isActive: 0
 --- !u!1 &1258016072
@@ -3242,6 +3263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7ec4b0f59644ce41ae50926def9c5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 8263810537965924774, guid: 3f4c2e5c669adc840b37ddf8425e9c0b, type: 3}
   damage: 0
   isActive: 0
 --- !u!1 &1300804310
@@ -4288,6 +4310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7ec4b0f59644ce41ae50926def9c5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 8263810537965924774, guid: 3f4c2e5c669adc840b37ddf8425e9c0b, type: 3}
   damage: 0
   isActive: 0
 --- !u!1 &1641917879
@@ -4601,7 +4624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RenderShadows: 1
+  m_RenderShadows: 0
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
@@ -5029,6 +5052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7ec4b0f59644ce41ae50926def9c5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 8263810537965924774, guid: 3f4c2e5c669adc840b37ddf8425e9c0b, type: 3}
   damage: 0
   isActive: 0
 --- !u!1 &1819994180
@@ -5475,6 +5499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7ec4b0f59644ce41ae50926def9c5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 8263810537965924774, guid: 3f4c2e5c669adc840b37ddf8425e9c0b, type: 3}
   damage: 0
   isActive: 0
 --- !u!1 &1974179358
@@ -5673,6 +5698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7ec4b0f59644ce41ae50926def9c5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 8263810537965924774, guid: 3f4c2e5c669adc840b37ddf8425e9c0b, type: 3}
   damage: 0
   isActive: 0
 --- !u!1 &2054824764

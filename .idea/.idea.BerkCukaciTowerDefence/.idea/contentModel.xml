@@ -33,6 +33,8 @@
             <e p="MonsterUI.cs" t="Include" />
           </e>
           <e p="Spawner" t="Include">
+            <e p="ActiveTargets.cs" t="Include" />
+            <e p="IActiveTargetsAction.cs" t="Include" />
             <e p="IPooledObject.cs" t="Include" />
             <e p="ObjectPooler.cs" t="Include" />
             <e p="Spawner.cs" t="Include" />

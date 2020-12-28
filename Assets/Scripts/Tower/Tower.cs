@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour, ITowerAction {
     public event ITowerAction.TowerDamageAction OnDamageChange;
+    ActiveTargets                               _activeTargets;
+    Queue<Monster>                              monsterQueue = new Queue<Monster>();
+
+    [SerializeField] GameObject bulletPrefab;
 
     public int Damage {
         get {
@@ -19,6 +23,11 @@ public class Tower : MonoBehaviour, ITowerAction {
     [SerializeField] int  damage;
     [SerializeField] bool isActive;
     bool                  canFire;
+
+    void Start() {
+        _activeTargets               =  Spawner.Instance.GetComponent<ActiveTargets>();
+        _activeTargets.OnQueueUpdate += UpdateTargetList;
+    }
 
     public void GenerateTower(int damage) {
         if (!isActive)
@@ -48,14 +57,19 @@ public class Tower : MonoBehaviour, ITowerAction {
     }
 
     void LookForTarget() {
-        if (true)
+        if (monsterQueue.Count <= 0)
             return;
-        // Check if there is a target
-        canFire = false;
         Fire();
     }
 
+    void UpdateTargetList(Queue<Monster> monsterQueue) {
+        this.monsterQueue = monsterQueue;
+    }
+
     void Fire() {
+        canFire = false;
+        Bullet bullet = Instantiate(bulletPrefab).GetComponent<Bullet>();
+        bullet.OnBulletFired(monsterQueue.Peek());
         //_objectPooler.SpawnFromPool(Strings.MONSTER);
     }
 

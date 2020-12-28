@@ -7,6 +7,7 @@ public class Spawner : MonoBehaviour {
     public static Spawner Instance;
     GameManager           _gameManager;
     ObjectPooler          _objectPooler;
+    ActiveTargets         _activeTargets;
 
     [SerializeField] float monsterSpawnCooldownMin     = 0.2f
                          , monsterSpawnCooldownMax     = 2f
@@ -26,14 +27,16 @@ public class Spawner : MonoBehaviour {
     }
 
     void Start() {
-        _gameManager  = GameManager.Instance;
-        _objectPooler = GetComponent<ObjectPooler>();
+        _gameManager   = GameManager.Instance;
+        _objectPooler  = GetComponent<ObjectPooler>();
+        _activeTargets = GetComponent<ActiveTargets>();
     }
 
     public void InitializeSpawner() {
         foreach (Transform child in transform) {
             child.gameObject.SetActive(false);
         }
+        _activeTargets.ResetQueue();
         monsterSpawnTimer    = 0f;
         monsterSpawnCooldown = monsterSpawnCooldownMax;
         isMinMonsterCooldown = false;
@@ -56,9 +59,8 @@ public class Spawner : MonoBehaviour {
     }
 
     void SpawnMonster() {
-        _objectPooler.SpawnFromPool(Strings.MONSTER);
-        // Monster monster=
-        // Add to tower targeting list
+        Monster monster = _objectPooler.SpawnFromPool(Strings.MONSTER);
+        _activeTargets.AddTarget(monster);
     }
 
     void UpdateMonsterSpawnCooldown() {

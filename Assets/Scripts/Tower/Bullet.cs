@@ -9,11 +9,10 @@ public class Bullet : MonoBehaviour {
     static           float   speed;
     static           bool    isAlive;
 
-    public void OnBulletFired(Monster targetMonster, float fireSpeed) {
+    public void OnBulletFired(Monster targetMonster) {
         target           =  targetMonster;
         target.OnDestroy += DestroyBullet;
         target.OnFinish  += DestroyBullet;
-        speed            =  fireSpeed;
         isAlive          =  true;
     }
 
