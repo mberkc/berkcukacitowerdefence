@@ -7,18 +7,24 @@ public class Tower : MonoBehaviour, ITowerAction {
     public event ITowerAction.TowerDamageAction OnDamageChange;
 
     public int Damage {
-        get;
-        set;
+        get {
+            return damage;
+        }
+        set {
+            damage = value;
+        }
     }
 
-    float fireCooldown = 1f, fireTimer;
-    int   damage;
-    bool  isActive, canFire;
+    float                 fireCooldown = 1f, fireTimer;
+    [SerializeField] int  damage;
+    [SerializeField] bool isActive;
+    bool                  canFire;
 
-    void CreateTower(int damage) {
+    public void GenerateTower(int damage) {
         if (!isActive)
             isActive = true;
-        fireTimer = 0f;
+        this.damage = damage;
+        fireTimer   = 0f;
         OnDamageChange?.Invoke(damage);
     }
 
@@ -42,7 +48,7 @@ public class Tower : MonoBehaviour, ITowerAction {
     }
 
     void LookForTarget() {
-        if (false)
+        if (true)
             return;
         // Check if there is a target
         canFire = false;

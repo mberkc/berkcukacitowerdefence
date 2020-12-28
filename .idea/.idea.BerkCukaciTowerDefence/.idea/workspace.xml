@@ -5,12 +5,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BerkCukaciTowerDefence/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BerkCukaciTowerDefence/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BerkCukaciTowerDefence/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BerkCukaciTowerDefence/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Monster/Monster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Monster/Monster.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Spawner/ObjectPooler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Spawner/ObjectPooler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Spawner/Spawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Spawner/Spawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tower/Tower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tower/Towers.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tower/Tower.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tower/Towers.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tower/Tower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tower/Tower.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tower/Towers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tower/TowerGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tower/Towers.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tower/TowerGenerator.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +31,6 @@
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/Constants.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Strings.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Spawner/MonsterPooler.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" />
@@ -46,11 +44,13 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Spawner/ObjectPooler.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Monster/Monster.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tower/Towers.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Spawner/Spawner.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tower/MonsterUI1.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tower/ITowerAction.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tower/TowerUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tower/Tower.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Tower/TowerGenerator.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Spawner/Spawner.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1mFbVBjjlU47gXiOjHYWMLwRMCv" />
@@ -98,7 +98,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1609092326127</updated>
-      <workItem from="1609092338011" duration="21383000" />
+      <workItem from="1609092338011" duration="25188000" />
     </task>
     <servers />
   </component>

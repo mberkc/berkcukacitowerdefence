@@ -30,7 +30,10 @@ public class Spawner : MonoBehaviour {
         _objectPooler = GetComponent<ObjectPooler>();
     }
 
-    void InitializeSpawner() {
+    public void InitializeSpawner() {
+        foreach (Transform child in transform) {
+            child.gameObject.SetActive(false);
+        }
         monsterSpawnTimer    = 0f;
         monsterSpawnCooldown = monsterSpawnCooldownMax;
         isMinMonsterCooldown = false;

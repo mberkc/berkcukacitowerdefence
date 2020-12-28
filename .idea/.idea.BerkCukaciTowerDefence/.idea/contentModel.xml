@@ -23,7 +23,6 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="LevelScriptableObject.cs" t="Include" />
           <e p="Managers" t="Include">
             <e p="GameManager.cs" t="Include" />
             <e p="UIManager.cs" t="Include" />
@@ -33,7 +32,6 @@
             <e p="Monster.cs" t="Include" />
             <e p="MonsterUI.cs" t="Include" />
           </e>
-          <e p="PlayerController.cs" t="Include" />
           <e p="Spawner" t="Include">
             <e p="IPooledObject.cs" t="Include" />
             <e p="ObjectPooler.cs" t="Include" />
@@ -45,7 +43,7 @@
             <e p="Bullet.cs" t="Include" />
             <e p="ITowerAction.cs" t="Include" />
             <e p="Tower.cs" t="Include" />
-            <e p="Towers.cs" t="Include" />
+            <e p="TowerGenerator.cs" t="Include" />
             <e p="TowerUI.cs" t="Include" />
           </e>
         </e>

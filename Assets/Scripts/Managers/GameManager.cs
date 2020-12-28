@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour {
     void Awake() {
         if (Instance == null) {
             Instance = this;
-            _spawner = GameObject.FindGameObjectWithTag(Tags.SPAWNER).GetComponent<Spawner>();
+            _spawner = Spawner.Instance;
             DontDestroyOnLoad(gameObject);
         } else if (Instance != this) {
             Destroy(gameObject);
@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour {
 #region Condition Handling & Other Functions
 
     void SetScene() {
+        _spawner.InitializeSpawner();
         UIManager.Instance.InitPanels();
         isPlaying      = false;
         isLoadingScene = false;

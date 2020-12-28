@@ -5,13 +5,15 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour {
-    public static            UIManager       Instance;
-    [SerializeField]         GameObject      initialPanel;
-    [SerializeField]         TextMeshProUGUI killAmount;
+    public static    UIManager       Instance;
+    [SerializeField] GameObject      initialPanel;
+    [SerializeField] TextMeshProUGUI killAmount;
+    [SerializeField] Button          spawnButton;
+    public           Button          SpawnButton { get => spawnButton; }
 
     void Awake() {
         if (Instance == null) {
-            Instance   = this;
+            Instance = this;
             DontDestroyOnLoad(gameObject);
         } else if (Instance != this) {
             Destroy(gameObject);
