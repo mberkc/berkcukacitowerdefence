@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ObjectPooler : MonoBehaviour {
     [Serializable] public class Pool {
-        public string     tag;
+        public string     nameTag;
         public GameObject objectPrefab;
         public int        size;
     }
@@ -19,10 +19,11 @@ public class ObjectPooler : MonoBehaviour {
             Queue<GameObject> objectPool = new Queue<GameObject>();
             for (int i = 0; i < pool.size; i++) {
                 GameObject obj = Instantiate(pool.objectPrefab, transform, false);
+                obj.name = pool.nameTag;
                 obj.SetActive(false);
                 objectPool.Enqueue(obj);
             }
-            poolDictionary.Add(pool.tag, objectPool);
+            poolDictionary.Add(pool.nameTag, objectPool);
         }
     }
 
@@ -34,9 +35,15 @@ public class ObjectPooler : MonoBehaviour {
         obj.SetActive(true);
 
         IPooledObject pooledObj = obj.GetComponent<IPooledObject>();
-        if(pooledObj!=null)
+        if (pooledObj != null)
             pooledObj.OnObjectSpawn();
         poolDictionary[tag].Enqueue(obj);
         return obj;
+    }
+
+    public void DisableObject(GameObject obj) {
+        if (!poolDictionary[obj.name].Contains(obj))
+            return;
+        obj.SetActive(false);
     }
 }

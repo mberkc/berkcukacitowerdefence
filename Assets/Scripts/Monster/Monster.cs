@@ -11,10 +11,17 @@ public class Monster : MonoBehaviour, IPooledObject, IMonsterAction {
 
     [SerializeField] Vector3[] path = new Vector3[4];
     [SerializeField] int       health;
-    int                        maxHealth = 100, tweenId;
-    bool                       isAlive;
+
+    public string NameTag {
+        get => nameTag;
+    }
+
+    string nameTag   = Strings.MONSTER;
+    int    maxHealth = 100;
+    bool   isAlive;
 
     public void OnObjectSpawn() {
+        CancelInvoke(nameof(Disable));
         health = maxHealth;
         OnHealthChange?.Invoke(health);
         isAlive = true;
@@ -23,11 +30,11 @@ public class Monster : MonoBehaviour, IPooledObject, IMonsterAction {
 
     void FollowPath() {
         StopMovement();
-        tweenId = transform.DOPath(path, 5).intId;
+        transform.DOPath(path, 5);
     }
 
     void StopMovement() {
-        DOTween.Kill(tweenId);
+        DOTween.Kill(transform);
     }
 
     void TakeDamage(int damageTaken) {
@@ -47,7 +54,7 @@ public class Monster : MonoBehaviour, IPooledObject, IMonsterAction {
         isAlive = false;
         StopMovement();
         OnDestroy?.Invoke();
-        // Recycle
+        Invoke(nameof(Disable), 0.1f);
     }
 
     void Finish() {
@@ -56,10 +63,14 @@ public class Monster : MonoBehaviour, IPooledObject, IMonsterAction {
         isAlive = false;
         StopMovement();
         OnFinish?.Invoke();
+        Invoke(nameof(Disable), 0.1f);
     }
 
-    void OnTriggerEnter(Collider other) {
-        print(other.tag);
+    void Disable() {
+        Spawner.Instance.RecycleObject(gameObject);
+    }
+
+    void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag(Tags.BULLET))
             TakeDamage(other.GetComponent<Bullet>().Damage);
         if (other.CompareTag(Tags.FINISH))
